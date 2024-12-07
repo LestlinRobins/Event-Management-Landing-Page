@@ -26,6 +26,14 @@ function fetchAndCreateContributors() {
       { login: "Joswin M. J.", html_url: "https://github.com/Joswin-10" },
       { login: "Pranav C. R.", html_url: "https://www.github.com/pranav-c-r" },
       { login: "Muhammed Basil", html_url: "https://github.com/Basil-world" },
+      {
+        login: "Anshumohan Acharya",
+        html_url: "https://github.com/AnshumohanAcharya",
+      },
+      { login: "Sri Harsha", html_url: "https://github.com/jacktherizzler" },
+      { login: "Atharv Mishra", html_url: "https://github.com/AtharvMixraw" },
+      { login: "Pranav Susar", html_url: "https://github.com/PranavSusar" },
+      { login: "Sam Joe", html_url: "https://github.com/kingrain" },
     ];
 
     // Shuffle the remaining contributors

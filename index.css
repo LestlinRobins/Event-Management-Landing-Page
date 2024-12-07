@@ -11,7 +11,9 @@ html {
 
   /* background: radial-gradient(circle at bottom left, rgba(0, 255, 8, 0.4) 10%, transparent 40%); */
 }
-
+body {
+  width: 100%;
+}
 .main-app-text {
   font-family: "DM Sans";
   font-size: 72px;
@@ -71,6 +73,7 @@ html {
   align-items: center;
   flex-direction: column;
   justify-content: center;
+  width: 100vw;
 }
 
 .img-section {
@@ -116,7 +119,6 @@ html {
   background: none; /* Remove any potential background */
   display: block; /* Ensures the image is rendered properly */
   border: none;
-  transform: translateX(-10vw); /* Move to the left by 5vw */
 }
 
 .main-download-container {
@@ -189,6 +191,7 @@ html {
   font-family: "DM Sans";
   margin-top: 5vh;
   text-align: center;
+  width: 100%;
 }
 .about-heading {
   color: #aee7ff;
@@ -384,7 +387,7 @@ a {
   align-items: center;
   position: absolute;
   left: 0;
-  width: 90%;
+  width: 100%;
 }
 
 .footer-section a {
@@ -445,6 +448,7 @@ a {
 .scrolling-container {
   width: 100%;
   overflow: hidden;
+  margin-left: 5vw;
 }
 
 .scroll-row {
@@ -530,4 +534,55 @@ a {
   font-weight: 500;
   color: #67d1ff;
   text-shadow: 0 0 5px rgba(103, 209, 255, 0.3);
+}
+/* Fix for overall width issues */
+body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Prevents horizontal scrolling */
+}
+
+/* Make all main sections take full width */
+.about-section,
+.features-section,
+.open-source-section,
+.contributors-section,
+.release-section {
+  width: 100%;
+  box-sizing: border-box; /* Important - includes padding in width calculation */
+  padding-left: 3vw;
+  padding-right: 3vw;
+}
+
+/* Fix download section which already has 100vw but might need box-sizing */
+.download-section {
+  width: 100vw;
+  box-sizing: border-box;
+}
+
+/* Fix the features section which has alignment issues */
+.feature {
+  width: auto; /* Remove fixed width */
+  margin-left: 5vw;
+  margin-right: 5vw;
+  box-sizing: border-box;
+}
+
+/* Remove potential side overflow */
+.text-overlay {
+  box-sizing: border-box;
+}
+
+/* Fix scrolling container width */
+.scrolling-container {
+  width: calc(100% - 10vw); /* Adjust for the 5vw margins on both sides */
+  margin-left: 5vw;
+  margin-right: 5vw;
+}
+
+/* Footer full width fix */
+.footer-section {
+  width: 100%;
+  box-sizing: border-box;
 }
