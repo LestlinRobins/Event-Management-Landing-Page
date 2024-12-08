@@ -245,6 +245,8 @@ body {
   gap: 6vw;
   color: #aee7ff;
   width: 80vw;
+  min-width: 85vw;
+  max-width: 85vw;
   align-self: center;
 }
 
