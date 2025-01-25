@@ -1,0 +1,83 @@
+// The URL of your GitHub repository's releases API
+const repoUrl = "https://api.github.com/repos/KingRain/Washio/releases";
+
+// Function to fetch all releases and update the page
+async function fetchReleases() {
+  try {
+    // Fetch release data from GitHub API
+    const response = await fetch(repoUrl);
+    const releases = await response.json();
+
+    if (releases.length === 0) {
+      console.log("No releases found.");
+      return;
+    }
+
+    // Populate the releases list
+    const releaseList = document.getElementById("releaseList");
+    releases.forEach((release, index) => {
+      // Create a list item for each release
+      const releaseItem = document.createElement("li");
+      releaseItem.classList.add("release-item");
+
+      // Check if this is the latest release
+      if (release.prerelease === false && index === 0) {
+        releaseItem.classList.add("latest");
+      }
+
+      // Create a link to download the APK if available
+      const apkAsset = release.assets.find((asset) =>
+        asset.name.endsWith(".apk")
+      );
+
+      if (apkAsset) {
+        const downloadLink = document.createElement("a");
+        downloadLink.href = apkAsset.browser_download_url;
+        downloadLink.textContent =
+          release.name +
+          (releaseItem.classList.contains("latest") ? " (Latest)" : "");
+        releaseItem.appendChild(downloadLink);
+      } else {
+        releaseItem.textContent = release.name + " (No APK available)";
+      }
+
+      // Append the release item to the list
+      releaseList.appendChild(releaseItem);
+    });
+  } catch (error) {
+    console.error("Error fetching releases:", error);
+  }
+}
+
+// Call the function to fetch releases when the page loads
+fetchReleases();
+
+// Function to fetch the latest release and update the download button
+async function fetchLatestRelease() {
+  try {
+    const response = await fetch(
+      "https://api.github.com/repos/KingRain/Washio/releases/latest"
+    );
+    const data = await response.json();
+
+    const apkAsset = data.assets.find((asset) => asset.name.endsWith(".apk"));
+
+    if (apkAsset) {
+      const downloadUrl = apkAsset.browser_download_url;
+      const downloadButton = document.getElementById("downloadButton");
+      downloadButton.textContent = "Download APK";
+      downloadButton.disabled = false;
+
+      downloadButton.onclick = () => {
+        window.location.href = downloadUrl;
+      };
+    } else {
+      console.error("APK file not found in the latest release.");
+    }
+  } catch (error) {
+    console.error("Error fetching the latest release:", error);
+  }
+}
+
+// Call the function to fetch the latest release for the button
+fetchLatestRelease();

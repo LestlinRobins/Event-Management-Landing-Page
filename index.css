@@ -1,0 +1,42 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 50px;
+}
+
+.download-button {
+  background-color: #4caf50;
+  color: white;
+  padding: 15px 32px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.download-button:hover {
+  background-color: #45a049;
+}
+
+.release-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.release-item {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  margin: 5px 0;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.release-item.latest {
+  background-color: #d4edda;
+  border-color: #c3e6cb;
+}
+
+.release-item a {
+  text-decoration: none;
+  color: #007bff;
+}
