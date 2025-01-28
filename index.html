@@ -6,17 +6,176 @@
     <title>Download My App</title>
     <link rel="stylesheet" href="index.css" />
     <script src="index.js" defer></script>
-    <style></style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
   </head>
   <body>
+    <div class="header">
+      <a class="logo-section" href="./index.html">
+          <img class="header-logo" src="assets/header-logo.png" />
+          TapGo
+      </a>
+      <div class="header-right">
+          <div>
+              <a href="https://github.com/KingRain/Washio/releases" target="_blank">
+                  Releases
+              </a>
+          </div>
+      </div>
+  </div>
+  <div>
+      <div class="download-section">
+          <div class="img-section">
+              <img class="screen1" src="/assets/screen1.png" />
+              <img class="screen2" src="assets/screen2.png" />
+          </div>
+          <div class="main-download-container">
+              <div class="download-container">
+                <!-- Button that will be updated dynamically -->
+                <button id="downloadButton" class="download-button" disabled>
+                  Loading...
+                </button>
+                <div class="version-text" id="versionText">
+                </div>
+              </div>
+              <div class="apple-download-container">
+                  <a href="./ios.html" class="apple-download-button">
+                      <i class="fab fa-apple"></i>
+                      Download
+                  </a>
+                  <div class="apple-version-text">
+                      v 2.0.1 (Stable)
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="about-section">
+      Tired of laundry-day battles? Download Wash.io and take control of your laundry schedule! With just a tap,
+      you can book your washing machine slot and avoid the dreaded laundry pile-up. Wash.io sends you handy
+      reminders and real-time updates, so you’ll never miss your turn. Make laundry day a breeze—grab Wash.io now
+      and keep your clothes (and sanity) fresh!
+  </div>
+  <div class="more-section">
+      <div class="question-text">
+          What is it?
+      </div>
+      <div class="description-text">
+          Great Question! Ever been stuck waiting for the washing machine, only to find out someone else just
+          snagged it?
+          <div>
+              Wash.io is your answer! This handy app lets you book a time slot for the washing machine in your
+              hostel,
+              so you
+              can say goodbye to laundry day chaos. Just choose your slot, and Wash.io takes care of the rest,
+              keeping
+              things
+              smooth and stress-free. It’s the simple way to make sure you always have the machine when you need
+              it!
+          </div>
+      </div>
+      <div class="question-text">
+          What can it do?
+      </div>
+      <div class="features">
+          <div class="feature-description">
+              Hassle-free Time Slot Booking
+          </div>
+          <div>
+              Forget about standing guard by the washing machine! With Wash.io, you can book your spot in advance
+              and
+              plan
+              your laundry day with ease. No more last-minute scrambles!
+          </div>
+          <div class="feature-description">
+              Timely Notification Alerts
+          </div>
+          <div>
+              Ever had someone knock on your door because you’re running late with your laundry? Wash.io has got
+              you
+              covered
+              with reminders to help you stick to your slot and make sure others get their turn as well. It’s all
+              about
+              keeping the laundry flow smooth and fair!
+          </div>
+          <div class="feature-description">
+              Know Real-Time Availability
+          </div>
+          <div>
+              Want to find the perfect time to do your laundry? Check the real-time availability of the washing
+              machine
+              right
+              in the app. It’s like having a laundry crystal ball to spot the best slots!
+          </div>
+      </div>
+      <div class="question-text">
+          Why Wash.io?
+      </div>
+      <div>
+          Because in a world where apps are tracking your every move, Wash.io is like that chill friend who
+          respects your
+          privacy. No hidden cookies, no creepy location tracking—just pure, unfiltered laundry management. It's
+          open-source, so you know exactly what's going on behind the scenes. The only thing Wash.io cares about
+          is
+          getting you that washing machine slot, not where you’re having chai or which floor you’re on.
+
+          So, forget about the apps that know more about your life than your best friend. With Wash.io, it’s just
+          you,
+          your laundry, and a hassle-free experience—no strings, no sneaky business!
+      </div>
+      <div class="question-text">
+          Our Amazing Team
+      </div>
+      <div class="social">
+        <div class="row1">
+          <p>Person1</p>
+          <p>Person2</p>
+          <p>Person3</p>
+          <p>Person4</p>
+          <p>Person5</p>
+          <p>Person6</p>
+          <p>Person7</p>
+          <p>Person8</p>
+          <p>Person9</p>
+        </div>
+        <div class="row2">
+          <p>Person10</p>
+          <p>Person11</p>
+          <p>Person12</p>
+          <p>Person13</p>
+          <p>Person14</p>
+          <p>Person15</p>
+          <p>Person16</p>
+          <p>Person17</p>
+          <p>Person18</p>
+        </div>
+        <div class="row3">
+          <p>Person19</p>
+          <p>Person20</p>
+          <p>Person21</p>
+          <p>Person22</p>
+          <p>Person23</p>
+          <p>Person24</p>
+          <p>Person25</p>
+          <p>Person26</p>
+          <p>Person27</p>
+        </div>
+      </div>
+      <div class="question-text">
+          Visit our GitHub
+      </div>
+      <div class="github">
+          <a href="https://github.com/KingRain/Washio" target="_blank">
+              <i class="fab fa-github"></i>
+              /Washio
+          </a>
+      </div>
+  </div>
+  </div>
+
     <h1>Download My App</h1>
     <p>Click the button below to download the latest version of the app:</p>
-
-    <!-- Button that will be updated dynamically -->
-    <button id="downloadButton" class="download-button" disabled>
-      Loading...
-    </button>
-
     <h2>Releases</h2>
     <ul id="releaseList" class="release-list">
       <!-- Releases will be listed here -->

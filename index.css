@@ -1,17 +1,19 @@
-body {
-  font-family: Arial, sans-serif;
-  text-align: center;
-  padding: 50px;
+.dm-sans-a {
+  font-family: "DM Sans", serif;
+  font-optical-sizing: auto;
+  font-weight: bold;
+  font-style: normal;
 }
 
 .download-button {
-  background-color: #4caf50;
+  background-color: rgb(3, 227, 3);
   color: white;
   padding: 15px 32px;
   font-size: 16px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  font-family: "DM Sans";
 }
 
 .download-button:hover {
@@ -39,4 +41,288 @@ body {
 .release-item a {
   text-decoration: none;
   color: #007bff;
+}
+
+@font-face {
+  font-family: Jetbrains;
+  src: url("./fonts/JetBrainsMono-Regular.ttf");
+}
+
+@font-face {
+  font-family: Jetbrains-B;
+  src: url("./fonts/JetBrainsMono-Bold.ttf");
+}
+
+@font-face {
+  font-family: Jetbrains-L;
+  src: url("./fonts/JetBrainsMono-Light.ttf");
+}
+
+@font-face {
+  font-family: Jetbrains-XL;
+  src: url("./fonts/JetBrainsMono-ExtraLight.ttf");
+}
+
+@font-face {
+  font-family: "Jetbrains-XLI";
+  src: url("./fonts/JetBrainsMono-ExtraLightItalic.ttf");
+}
+
+html {
+  background-color: black;
+  /* background: radial-gradient(circle at bottom left, rgba(0, 255, 8, 0.4) 10%, transparent 40%); */
+}
+
+.main-app-text {
+  font-family: "DM Sans";
+  font-size: 72px;
+  padding-top: 10vh;
+  padding-left: 5vw;
+}
+
+.main-section {
+  background-color: #003f4f;
+  height: 50vh;
+}
+
+.header {
+  background-color: rgba(34, 57, 30, 0.367);
+  padding: 4vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  align-items: center;
+  backdrop-filter: blur(40px);
+  z-index: 1;
+  font-family: "DM Sans";
+  color: #a9f285;
+}
+
+.header-right {
+  display: flex;
+  flex-direction: row;
+  gap: 2vh;
+  color: #a9f285;
+}
+
+.header-logo {
+  height: 4.5vh;
+}
+
+.logo-section {
+  display: flex;
+  align-items: center;
+  gap: 1vh;
+  margin-left: -3vw;
+}
+
+.download-section {
+  margin-top: 10vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.img-section {
+  display: flex;
+  flex-direction: row;
+  gap: 3vh;
+  margin-top: 5.5vh;
+}
+
+.screen1 {
+  width: 36vw;
+  height: fit-content;
+  box-shadow: -10px 1px 100px 1px rgba(0, 128, 0, 0.422);
+}
+
+.screen2 {
+  width: 36vw;
+  margin-top: 10vh;
+  box-shadow: 10px 1px 100px 1px rgba(0, 128, 0, 0.326);
+}
+
+.main-download-container {
+  display: flex;
+  flex-direction: row;
+  gap: 5vw;
+}
+
+.download-button {
+  color: black;
+  box-shadow: 10px 1px 100px 1px rgba(0, 128, 0, 0.222);
+  padding: 0px;
+}
+
+.download-container {
+  background-color: rgb(3, 227, 3);
+  padding: 3vw;
+  font-family: "DM Sans";
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  min-width: max-content;
+  width: 30vw;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  border-radius: 20px;
+  height: 5vh;
+  margin-top: 5vh;
+  box-shadow: 10px 1px 100px 1px rgba(0, 128, 0, 0.584);
+}
+
+.apple-download-container {
+  background-color: rgb(31, 31, 31);
+  padding: 3vw;
+  font-family: "DM Sans";
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  min-width: max-content;
+  width: 30vw;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  border-radius: 20px;
+  height: 5vh;
+  margin-top: 5vh;
+  box-shadow: 10px 1px 100px 1px rgba(0, 0, 0, 0.567);
+}
+
+.version-text {
+  font-size: 12px;
+  color: rgb(40, 40, 40);
+  font-family: "DM Sans";
+}
+
+.apple-version-text {
+  font-size: 12px;
+  color: rgb(155, 155, 155);
+  font-family: "DM Sans";
+}
+
+.about-section {
+  color: #a9f285;
+  font-family: "DM Sans";
+  margin-top: 3vh;
+  text-align: center;
+}
+
+.more-section {
+  color: #f4f4f4;
+  font-family: "DM Sans";
+  margin-top: 10vh;
+  text-align: center;
+  display: flex;
+  gap: 2vh;
+  flex-direction: column;
+}
+
+.question-text {
+  font-family: "DM Sans";
+  font-size: 25px;
+  color: rgb(3, 227, 3);
+  margin-top: 2vh;
+}
+
+.features {
+  display: flex;
+  flex-direction: column;
+  gap: 1vh;
+}
+
+.description-text {
+  gap: 1vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.feature-description {
+  color: #648e7b;
+}
+
+.social-name {
+  margin-top: 1.2vh;
+}
+
+.links {
+  display: flex;
+  gap: 2vh;
+  align-items: center;
+  align-self: center;
+}
+
+a {
+  text-decoration: none;
+  color: #a9f285;
+}
+
+.github {
+  margin-bottom: 3vh;
+}
+
+.instructions {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 3vw;
+}
+
+.steps-title-section {
+  margin-top: 15vh;
+  color: white;
+  font-family: "DM Sans";
+  font-size: 6vw;
+  margin-bottom: 1vh;
+}
+
+.steps-title-small {
+  color: rgb(116, 116, 116);
+  font-family: "DM Sans";
+  font-size: 2.8vw;
+}
+
+.installation-instruction {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  font-family: "DM Sans";
+  align-items: center;
+}
+
+.instruction-screens {
+  width: 60vw;
+  margin-top: 20px;
+}
+
+.installation-instruction-1 {
+  color: white;
+  font-family: "DM Sans";
+}
+
+.row1,
+.row2,
+.row3 {
+  display: flex;
+  flex-direction: row;
+  gap: 2vh;
+  width: 200vw;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  animation: scroll 10s linear infinite;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(20%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
 }

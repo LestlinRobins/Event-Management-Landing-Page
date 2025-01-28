@@ -65,8 +65,10 @@ async function fetchLatestRelease() {
     if (apkAsset) {
       const downloadUrl = apkAsset.browser_download_url;
       const downloadButton = document.getElementById("downloadButton");
-      downloadButton.textContent = "Download APK";
+      downloadButton.textContent = "Download";
       downloadButton.disabled = false;
+      const versionText = document.getElementById("versionText");
+      versionText.textContent = data.name + " (Stable)";
 
       downloadButton.onclick = () => {
         window.location.href = downloadUrl;
@@ -78,6 +80,46 @@ async function fetchLatestRelease() {
     console.error("Error fetching the latest release:", error);
   }
 }
+// Function to fetch contributors and update the team members section
+// async function fetchContributors() {
+//   try {
+//     const response = await fetch(
+//       "https://api.github.com/repos/KingRain/Washio/contributors"
+//     );
+//     const contributors = await response.json();
 
+//     if (contributors.length === 0) {
+//       console.log("No contributors found.");
+//       return;
+//     }
+
+//     // Populate the contributors list
+//     const teamMembers = document.getElementById("teamMembers");
+//     teamMembers.classList.add("horizontal-scroll");
+
+//     contributors.forEach((contributor) => {
+//       // Create a div for each contributor
+//       const contributorDiv = document.createElement("div");
+//       contributorDiv.classList.add("contributor");
+
+//       // Create a link to the contributor's GitHub profile
+//       const profileLink = document.createElement("a");
+//       profileLink.href = contributor.html_url;
+//       profileLink.textContent = contributor.login;
+//       profileLink.classList.add("profile-link");
+
+//       // Append the avatar and profile link to the contributor div
+//       contributorDiv.appendChild(profileLink);
+
+//       // Append the contributor div to the team members section
+//       teamMembers.appendChild(contributorDiv);
+//     });
+//   } catch (error) {
+//     console.error("Error fetching contributors:", error);
+//   }
+// }
+
+// Call the function to fetch contributors when the page loads
+// fetchContributors();
 // Call the function to fetch the latest release for the button
 fetchLatestRelease();
