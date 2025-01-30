@@ -6,7 +6,7 @@
 }
 
 .download-button {
-  background-color: rgb(3, 227, 3);
+  background-color: transparent;
   color: white;
   padding: 15px 32px;
   font-size: 16px;
@@ -14,10 +14,6 @@
   border-radius: 5px;
   cursor: pointer;
   font-family: "DM Sans";
-}
-
-.download-button:hover {
-  background-color: #45a049;
 }
 
 .release-list {
@@ -69,7 +65,9 @@
 }
 
 html {
-  background-color: black;
+  /* background-color: black; */
+  background: linear-gradient(to bottom, #07181f, #000000);
+
   /* background: radial-gradient(circle at bottom left, rgba(0, 255, 8, 0.4) 10%, transparent 40%); */
 }
 
@@ -86,7 +84,7 @@ html {
 }
 
 .header {
-  background-color: rgba(34, 57, 30, 0.367);
+  background-color: #13485f43;
   padding: 4vh;
   display: flex;
   flex-direction: row;
@@ -99,14 +97,14 @@ html {
   backdrop-filter: blur(40px);
   z-index: 1;
   font-family: "DM Sans";
-  color: #a9f285;
+  color: #ffffff;
 }
 
 .header-right {
   display: flex;
   flex-direction: row;
   gap: 2vh;
-  color: #a9f285;
+  color: #ffffff;
 }
 
 .header-logo {
@@ -121,7 +119,7 @@ html {
 }
 
 .download-section {
-  margin-top: 10vh;
+  margin-top: 20vh;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -129,22 +127,49 @@ html {
 }
 
 .img-section {
+  position: relative;
   display: flex;
-  flex-direction: row;
-  gap: 3vh;
-  margin-top: 5.5vh;
+  flex-direction: column;
+  gap: 0; /* Remove gap between elements */
+  margin-top: 11vh;
+  background-color: transparent; /* Ensures parent div is transparent */
 }
-
+.text-overlay {
+  position: absolute;
+  top: 18vh;
+  left: 10vw;
+  width: auto;
+  height: 10vh;
+  gap: 0px;
+  color: white;
+  font-family: "DM Sans";
+  font-size: 10vw;
+  text-align: left;
+}
+.text-overlay h1 {
+  margin: 0;
+  padding: 0;
+  font-family: "DM Sans";
+  font-weight: 300;
+}
+.text-events {
+  font-size: 16vw;
+  color: #67d1ff;
+  text-shadow: 0 0 30px #aee7ff;
+}
+.text-simpler {
+  position: absolute;
+  top: 8vh;
+  font-size: 16vw;
+  text-shadow: 0 0 30px rgba(255, 255, 255, 0.781);
+}
 .screen1 {
-  width: 36vw;
-  height: fit-content;
-  box-shadow: -10px 1px 100px 1px rgba(0, 128, 0, 0.422);
-}
-
-.screen2 {
-  width: 36vw;
-  margin-top: 10vh;
-  box-shadow: 10px 1px 100px 1px rgba(0, 128, 0, 0.326);
+  width: 100vw;
+  height: auto;
+  background: none; /* Remove any potential background */
+  display: block; /* Ensures the image is rendered properly */
+  border: none;
+  transform: translateX(-10vw); /* Move to the left by 5vw */
 }
 
 .main-download-container {
@@ -160,7 +185,7 @@ html {
 }
 
 .download-container {
-  background-color: rgb(3, 227, 3);
+  background-color: #0a374c;
   padding: 3vw;
   font-family: "DM Sans";
   text-decoration: none;
@@ -174,7 +199,7 @@ html {
   border-radius: 20px;
   height: 5vh;
   margin-top: 5vh;
-  box-shadow: 10px 1px 100px 1px rgba(0, 128, 0, 0.584);
+  /* box-shadow: 10px 1px 100px 1px rgba(0, 128, 0, 0.584); */
 }
 
 .apple-download-container {
@@ -260,7 +285,7 @@ html {
 
 a {
   text-decoration: none;
-  color: #a9f285;
+  color: #ffffff;
 }
 
 .github {
@@ -307,7 +332,6 @@ a {
 }
 
 .row1,
-.row2,
 .row3 {
   display: flex;
   flex-direction: row;
@@ -318,11 +342,28 @@ a {
   animation: scroll 10s linear infinite;
 }
 
+.row2 {
+  display: flex;
+  flex-direction: row;
+  gap: 2vh;
+  width: 200vw;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  animation: scroll1 10s linear infinite;
+}
 @keyframes scroll {
   0% {
     transform: translateX(20%);
   }
   100% {
     transform: translateX(-100%);
+  }
+}
+@keyframes scroll1 {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(20%);
   }
 }
