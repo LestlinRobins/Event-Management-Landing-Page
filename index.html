@@ -5,145 +5,172 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Download My App</title>
     <link rel="stylesheet" href="index.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
     <script src="index.js" defer></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div class="header">
       <a class="logo-section" href="./index.html">
-          <img class="header-logo" src="assets/header-logo.png" alt="app logo"/>
+        <img class="header-logo" src="assets/header-logo.png" alt="app logo" />
       </a>
       <div class="header-right">
-          <div>
-              <a href="https://github.com/KingRain/Washio/releases" target="_blank">
-                  Releases
-              </a>
-          </div>
+        <div>
+          <a href="https://github.com/KingRain/Washio/releases" target="_blank">
+            Releases
+          </a>
+        </div>
       </div>
-  </div>
-  <div>
+    </div>
+    <div>
       <div class="download-section">
         <div class="text-overlay">
           <h1 class="text-events">Events.</h1>
           <h1 class="text-simpler">Simplified.</h1>
         </div>
 
-          <div class="img-section">
-              <img class="screen1" src="/assets/mockup1.png" />
+        <div class="img-section">
+          <img class="screen1" src="/assets/mockup1.png" />
+        </div>
+        <div class="main-download-container">
+          <div class="download-container">
+            <!-- Button that will be updated dynamically -->
+            <div>
+              <i class="fab fa-android"></i>
+              <button id="downloadButton" class="download-button" disabled>
+                Loading...
+              </button>
+            </div>
+            <div class="version-text" id="versionText"></div>
           </div>
-          <div class="main-download-container">
-              <div class="download-container">
-                <!-- Button that will be updated dynamically -->
-                <button id="downloadButton" class="download-button" disabled>
-                  Loading...
-                </button>
-                <div class="version-text" id="versionText">
-                </div>
-              </div>
-              <div class="apple-download-container">
-                  <a href="./ios.html" class="apple-download-button">
-                      <i class="fab fa-apple"></i>
-                      Download
-                  </a>
-                  <div class="apple-version-text">
-                      v 2.0.1 (Stable)
-                  </div>
-              </div>
+          <div class="apple-download-container">
+            <a href="./ios.html" class="apple-download-button">
+              <i class="fab fa-apple"></i>
+              Web App
+            </a>
+            <div class="apple-version-text">v 2.0.1 (Latest)</div>
           </div>
+        </div>
       </div>
-  </div>
-  <div class="about-section">
-      Tired of laundry-day battles? Download Wash.io and take control of your laundry schedule! With just a tap,
-      you can book your washing machine slot and avoid the dreaded laundry pile-up. Wash.io sends you handy
-      reminders and real-time updates, so you’ll never miss your turn. Make laundry day a breeze—grab Wash.io now
-      and keep your clothes (and sanity) fresh!
-  </div>
-  <div class="more-section">
-      <div class="question-text">
-          What is it?
+    </div>
+    <div class="about-section">
+      <h1 class="about-heading">
+        Simplify Your Club Experience – All in One Place
+      </h1>
+      <p class="about-text">
+        Welcome to [App Name] – the open-source app built by students, for
+        students! Effortlessly manage your club events, sessions, and contests
+        with just a few taps. Stay on top of upcoming activities, register for
+        events, provide feedback, and access session resources, all in one
+        place. Whether you're a club organizer or an enthusiastic member, [App
+        Name] makes it easy to engage and stay connected.
+      </p>
+    </div>
+    <div class="about-section">
+      <h1 class="about-heading">Explore. Participate. Feedback. Repeat.</h1>
+      <p class="about-text">
+        Why juggle multiple apps when everything you need is in one place? With
+        [App Name], managing club events, sessions, and contests is a breeze.
+        Discover events, register, leave feedback, and access resources—all with
+        a tap. It’s open-source, built by students for students, and designed to
+        make your club experience smoother and more fun!
+      </p>
+    </div>
+    <div class="features-section">
+      <h1 class="features-heading">Packed with Features, Powered by You!</h1>
+      <p class="features-text">
+        Designed to simplify, streamline, and supercharge your club experience,
+        [App Name] brings everything you need to manage events, connect with
+        members, and stay organized—all in one place. Here’s how we make it
+        happen:
+      </p>
+      <div class="feature">
+        <i class="fas fa-calendar-alt"></i>
+        <div>
+          <h2>Seamless Event Management</h2>
+          <p>
+            Easily create, manage, and share events, sessions, and
+            contests—everything you need, all in one place. No more digging
+            through endless emails or spreadsheets!
+          </p>
+        </div>
       </div>
-      <div class="description-text">
-          Great Question! Ever been stuck waiting for the washing machine, only to find out someone else just
-          snagged it?
-          <div>
-              Wash.io is your answer! This handy app lets you book a time slot for the washing machine in your
-              hostel,
-              so you
-              can say goodbye to laundry day chaos. Just choose your slot, and Wash.io takes care of the rest,
-              keeping
-              things
-              smooth and stress-free. It’s the simple way to make sure you always have the machine when you need
-              it!
-          </div>
+      <div class="feature">
+        <i class="fas fa-bolt"></i>
+        <div>
+          <h2>Instant Registration & Updates</h2>
+          <p>
+            Register for events, contests, and sessions with just a click. Stay
+            updated with notifications, so you never miss an important moment.
+          </p>
+        </div>
       </div>
-      <div class="question-text">
-          What can it do?
+      <div class="feature">
+        <i class="fas fa-book"></i>
+        <div>
+          <h2>Session Resources at Your Fingertips</h2>
+          <p>
+            Access all the resources, slides, and materials from your sessions,
+            right after they end. No more hunting for notes or asking for links!
+          </p>
+        </div>
       </div>
-      <div class="features">
-          <div class="feature-description">
-              Hassle-free Time Slot Booking
-          </div>
-          <div>
-              Forget about standing guard by the washing machine! With Wash.io, you can book your spot in advance
-              and
-              plan
-              your laundry day with ease. No more last-minute scrambles!
-          </div>
-          <div class="feature-description">
-              Timely Notification Alerts
-          </div>
-          <div>
-              Ever had someone knock on your door because you’re running late with your laundry? Wash.io has got
-              you
-              covered
-              with reminders to help you stick to your slot and make sure others get their turn as well. It’s all
-              about
-              keeping the laundry flow smooth and fair!
-          </div>
-          <div class="feature-description">
-              Know Real-Time Availability
-          </div>
-          <div>
-              Want to find the perfect time to do your laundry? Check the real-time availability of the washing
-              machine
-              right
-              in the app. It’s like having a laundry crystal ball to spot the best slots!
-          </div>
+      <div class="feature">
+        <i class="fas fa-comment-dots"></i>
+        <div>
+          <h2>Effortless Feedback</h2>
+          <p>
+            Provide quick, easy feedback after each session or event. Help clubs
+            improve, and let your voice be heard.
+          </p>
+        </div>
       </div>
-      <div class="question-text">
-          Why Wash.io?
+      <div class="feature">
+        <i class="fas fa-bell"></i>
+        <div>
+          <h2>Stay Connected with Clubs</h2>
+          <p>
+            Follow your favorite clubs and never miss an event. Get notified
+            about upcoming sessions, contests, and more.
+          </p>
+        </div>
       </div>
-      <div>
-          Because in a world where apps are tracking your every move, Wash.io is like that chill friend who
-          respects your
-          privacy. No hidden cookies, no creepy location tracking—just pure, unfiltered laundry management. It's
-          open-source, so you know exactly what's going on behind the scenes. The only thing Wash.io cares about
-          is
-          getting you that washing machine slot, not where you’re having chai or which floor you’re on.
-
-          So, forget about the apps that know more about your life than your best friend. With Wash.io, it’s just
-          you,
-          your laundry, and a hassle-free experience—no strings, no sneaky business!
+    </div>
+    <div class="open-source-section">
+      <h1 class="open-source-section-heading">
+        Open Source, Open Hearts
+        <span class="heart">❤️</span>
+      </h1>
+      <p class="open-source-section-text">
+        [App Name] is open-source, which means it’s not just ours—it’s
+        <i>everyone’s</i>. Want to fix a bug, add a feature, or just make it
+        cooler? Jump into the code and make your mark! It’s like a community
+        project, but without the awkward group project meetings. So, come on in,
+        get your hands dirty, and let’s build something awesome together!
+      </p>
+      <h1 class="visit-heading">Join the Party</h1>
+      <p class="open-source-section-text">
+        Curious about how we pulled this off? Head to our GitHub! Fork it, clone
+        it, or just send us a virtual high-five. It’s open-source, so go
+        wild—but please, no crashing the code. We’re not ready for that level of
+        chaos… yet. 🚀
+      </p>
+      <div class="github-link">
+        <a href="https://github.com/KingRain/Washio" target="_blank">
+          <i class="fab fa-github"></i>
+          /[App-name]
+        </a>
       </div>
-      <div class="question-text">
-          Our Amazing Team
-      </div>
-      <div class="social">
-      </div>
-      <div class="question-text">
-          Visit our GitHub
-      </div>
-      <div class="github">
-          <a href="https://github.com/KingRain/Washio" target="_blank">
-              <i class="fab fa-github"></i>
-              /Washio
-          </a>
-      </div>
-  </div>
-  </div>
-
+    </div>
     <h1>Download My App</h1>
     <p>Click the button below to download the latest version of the app:</p>
     <h2>Releases</h2>

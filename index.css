@@ -179,8 +179,7 @@ html {
 }
 
 .download-button {
-  color: black;
-  box-shadow: 10px 1px 100px 1px rgba(0, 128, 0, 0.222);
+  color: #aee7ff;
   padding: 0px;
 }
 
@@ -195,11 +194,12 @@ html {
   width: 30vw;
   align-items: center;
   justify-content: center;
-  color: black;
+  color: #aee7ff;
   border-radius: 20px;
   height: 5vh;
   margin-top: 5vh;
   /* box-shadow: 10px 1px 100px 1px rgba(0, 128, 0, 0.584); */
+  box-shadow: 0 0 50px #0b41595a;
 }
 
 .apple-download-container {
@@ -217,12 +217,16 @@ html {
   border-radius: 20px;
   height: 5vh;
   margin-top: 5vh;
-  box-shadow: 10px 1px 100px 1px rgba(0, 0, 0, 0.567);
+  box-shadow: 0 0 50px rgba(47, 43, 43, 0.567);
+}
+
+.apple-download-container a {
+  color: white;
 }
 
 .version-text {
   font-size: 12px;
-  color: rgb(40, 40, 40);
+  color: #6b8f9e;
   font-family: "DM Sans";
 }
 
@@ -231,65 +235,136 @@ html {
   color: rgb(155, 155, 155);
   font-family: "DM Sans";
 }
-
 .about-section {
-  color: #a9f285;
   font-family: "DM Sans";
-  margin-top: 3vh;
+  margin-top: 5vh;
   text-align: center;
 }
-
-.more-section {
-  color: #f4f4f4;
+.about-heading {
+  color: #aee7ff;
+  text-align: left;
+  margin-left: 5vw;
+  text-shadow: 0 0 20px #aee7ff86;
+}
+.about-text {
+  color: #aee7ff;
+  text-align: left;
+  margin-left: 5vw;
+  font-weight: 200;
+  padding-right: 5vw;
+}
+.features-section {
+  margin-top: 5vh;
+  display: flex;
+  flex-direction: column;
   font-family: "DM Sans";
-  margin-top: 10vh;
-  text-align: center;
+}
+.features-heading {
+  color: #aee7ff;
+  text-align: left;
+  margin-left: 5vw;
+  text-shadow: 0 0 20px #aee7ff86;
+  margin-bottom: 1vh;
+}
+.features-text {
+  color: #aee7ff;
+  text-align: left;
+  margin-left: 5vw;
+  font-weight: 200;
+  padding-right: 5vw;
+}
+.features-section h1 {
+  margin-left: 5vw;
+  text-align: left;
+  color: #aee7ff;
+  text-shadow: 0 0 20px #aee7ff86;
+  margin-top: 0px;
+}
+.feature {
+  background-color: #0f2027;
+  padding-right: 5vw;
+  padding-left: 5vw;
+  padding-bottom: 2vw;
+  border-radius: 20px;
+  margin: 10px 0;
   display: flex;
-  gap: 2vh;
-  flex-direction: column;
-}
-
-.question-text {
-  font-family: "DM Sans";
-  font-size: 25px;
-  color: rgb(3, 227, 3);
-  margin-top: 2vh;
-}
-
-.features {
-  display: flex;
-  flex-direction: column;
-  gap: 1vh;
-}
-
-.description-text {
-  gap: 1vh;
-  display: flex;
-  flex-direction: column;
-}
-
-.feature-description {
-  color: #648e7b;
-}
-
-.social-name {
-  margin-top: 1.2vh;
-}
-
-.links {
-  display: flex;
-  gap: 2vh;
-  align-items: center;
+  flex-direction: row;
+  gap: 6vw;
+  color: #aee7ff;
+  width: 80vw;
   align-self: center;
 }
 
-a {
-  text-decoration: none;
-  color: #ffffff;
+.feature i {
+  font-size: 24px;
+  align-self: center;
 }
 
-.github {
-  margin-bottom: 3vh;
+.feature h2 {
+  color: #aee7ff;
+  font-weight: 500;
+  margin: 0;
+  margin-top: 2vh;
+  margin-bottom: 0px;
+}
+
+.feature p {
+  color: #aee7ff;
+  font-weight: 150;
+  padding: 0px;
+}
+
+.open-source-section {
+  font-family: "DM Sans";
+  margin-top: 5vh;
+  text-align: left;
+}
+.open-source-section-heading {
+  color: #aee7ff;
+  text-align: left;
+  margin-left: 5vw;
+  text-shadow: 0 0 30px #aee7ffa6;
+}
+.open-source-section-text {
+  color: #aee7ff;
+  text-align: left;
+  margin-left: 5vw;
+  font-weight: 200;
+  padding-right: 5vw;
+}
+
+.heart {
+  animation: sizeInOut 2s infinite;
+  text-shadow: 0 0 30px #f44e4ead;
+  display: inline-block;
+}
+
+@keyframes sizeInOut {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+.visit-heading {
+  color: #aee7ff;
+  text-align: left;
+  margin-left: 5vw;
+  margin-top: 4vh;
+  text-shadow: 0 0 30px #aee7ffa6;
+}
+.github-link {
+  color: #aee7ff;
+  text-align: left;
+  margin-left: 5vw;
+  font-weight: 200;
+  padding-right: 5vw;
+}
+a {
+  text-decoration: none;
+  color: #aee7ff;
 }
 
 .instructions {
@@ -329,41 +404,4 @@ a {
 .installation-instruction-1 {
   color: white;
   font-family: "DM Sans";
-}
-
-.row1,
-.row3 {
-  display: flex;
-  flex-direction: row;
-  gap: 2vh;
-  width: 200vw;
-  box-sizing: border-box;
-  overflow-x: hidden;
-  animation: scroll 10s linear infinite;
-}
-
-.row2 {
-  display: flex;
-  flex-direction: row;
-  gap: 2vh;
-  width: 200vw;
-  box-sizing: border-box;
-  overflow-x: hidden;
-  animation: scroll1 10s linear infinite;
-}
-@keyframes scroll {
-  0% {
-    transform: translateX(20%);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
-}
-@keyframes scroll1 {
-  0% {
-    transform: translateX(-100%);
-  }
-  100% {
-    transform: translateX(20%);
-  }
 }

@@ -68,7 +68,7 @@ async function fetchLatestRelease() {
       downloadButton.textContent = "Download";
       downloadButton.disabled = false;
       const versionText = document.getElementById("versionText");
-      versionText.textContent = data.name + " (Stable)";
+      versionText.textContent = data.name + " (Latest)";
 
       downloadButton.onclick = () => {
         window.location.href = downloadUrl;
