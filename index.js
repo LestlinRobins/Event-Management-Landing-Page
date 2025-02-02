@@ -69,6 +69,9 @@ async function fetchLatestRelease() {
       downloadButton.disabled = false;
       const versionText = document.getElementById("versionText");
       versionText.textContent = data.name + " (Latest)";
+      const appleButton =
+        document.getElementsByClassName("apple-version-text")[0];
+      appleButton.textContent = data.name + " (Latest)";
 
       downloadButton.onclick = () => {
         window.location.href = downloadUrl;
