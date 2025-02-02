@@ -33,14 +33,26 @@ async function fetchReleases() {
       if (apkAsset) {
         const downloadLink = document.createElement("a");
         downloadLink.href = apkAsset.browser_download_url;
-        downloadLink.textContent =
-          release.name +
-          (releaseItem.classList.contains("latest") ? " (Latest)" : "");
+        downloadLink.textContent = release.name;
         releaseItem.appendChild(downloadLink);
       } else {
         releaseItem.textContent = release.name + " (No APK available)";
       }
 
+      // Add a small div with the text "Latest" for the latest release
+      if (releaseItem.classList.contains("latest")) {
+        const latestDiv = document.createElement("div");
+        latestDiv.textContent = "Latest";
+        latestDiv.classList.add("latest-badge");
+        releaseItem.appendChild(latestDiv);
+      }
+      // Add a small div with the text "The OG one" for the initial release
+      if (index === releases.length - 1) {
+        const ogDiv = document.createElement("div");
+        ogDiv.textContent = "The OG one";
+        ogDiv.classList.add("latest-badge");
+        releaseItem.appendChild(ogDiv);
+      }
       // Append the release item to the list
       releaseList.appendChild(releaseItem);
     });

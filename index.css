@@ -5,65 +5,6 @@
   font-style: normal;
 }
 
-.download-button {
-  background-color: transparent;
-  color: white;
-  padding: 15px 32px;
-  font-size: 16px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-family: "DM Sans";
-}
-
-.release-list {
-  list-style-type: none;
-  padding: 0;
-}
-
-.release-item {
-  background-color: #f9f9f9;
-  border: 1px solid #ddd;
-  margin: 5px 0;
-  padding: 10px;
-  border-radius: 5px;
-}
-
-.release-item.latest {
-  background-color: #d4edda;
-  border-color: #c3e6cb;
-}
-
-.release-item a {
-  text-decoration: none;
-  color: #007bff;
-}
-
-@font-face {
-  font-family: Jetbrains;
-  src: url("./fonts/JetBrainsMono-Regular.ttf");
-}
-
-@font-face {
-  font-family: Jetbrains-B;
-  src: url("./fonts/JetBrainsMono-Bold.ttf");
-}
-
-@font-face {
-  font-family: Jetbrains-L;
-  src: url("./fonts/JetBrainsMono-Light.ttf");
-}
-
-@font-face {
-  font-family: Jetbrains-XL;
-  src: url("./fonts/JetBrainsMono-ExtraLight.ttf");
-}
-
-@font-face {
-  font-family: "Jetbrains-XLI";
-  src: url("./fonts/JetBrainsMono-ExtraLightItalic.ttf");
-}
-
 html {
   /* background-color: black; */
   background: linear-gradient(to bottom, #07181f, #000000);
@@ -85,7 +26,7 @@ html {
 
 .header {
   background-color: #13485f43;
-  padding: 4vh;
+  padding: 3vh;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -98,6 +39,7 @@ html {
   z-index: 1;
   font-family: "DM Sans";
   color: #ffffff;
+  border-radius: 0px 0px 12px 12px;
 }
 
 .header-right {
@@ -181,8 +123,12 @@ html {
 .download-button {
   color: #aee7ff;
   padding: 0px;
+  background-color: transparent;
+  border: none;
+  font-family: "DM Sans";
+  font-size: 16px;
+  align-self: center;
 }
-
 .download-container {
   background-color: #0a374c;
   padding: 3vw;
@@ -198,7 +144,6 @@ html {
   border-radius: 20px;
   height: 5vh;
   margin-top: 5vh;
-  /* box-shadow: 10px 1px 100px 1px rgba(0, 128, 0, 0.584); */
   box-shadow: 0 0 50px #0b41595a;
 }
 
@@ -313,95 +258,4 @@ html {
   font-weight: 150;
   padding: 0px;
 }
-
-.open-source-section {
-  font-family: "DM Sans";
-  margin-top: 5vh;
-  text-align: left;
-}
-.open-source-section-heading {
-  color: #aee7ff;
-  text-align: left;
-  margin-left: 5vw;
-  text-shadow: 0 0 30px #aee7ffa6;
-}
-.open-source-section-text {
-  color: #aee7ff;
-  text-align: left;
-  margin-left: 5vw;
-  font-weight: 200;
-  padding-right: 5vw;
-}
-
-.heart {
-  animation: sizeInOut 2s infinite;
-  text-shadow: 0 0 30px #f44e4ead;
-  display: inline-block;
-}
-
-@keyframes sizeInOut {
-  0%,
-  100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.2);
-  }
-}
-.visit-heading {
-  color: #aee7ff;
-  text-align: left;
-  margin-left: 5vw;
-  margin-top: 4vh;
-  text-shadow: 0 0 30px #aee7ffa6;
-}
-.github-link {
-  color: #aee7ff;
-  text-align: left;
-  margin-left: 5vw;
-  font-weight: 200;
-  padding-right: 5vw;
-}
-a {
-  text-decoration: none;
-  color: #aee7ff;
-}
-
-.instructions {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 3vw;
-}
-
-.steps-title-section {
-  margin-top: 15vh;
-  color: white;
-  font-family: "DM Sans";
-  font-size: 6vw;
-  margin-bottom: 1vh;
-}
-
-.steps-title-small {
-  color: rgb(116, 116, 116);
-  font-family: "DM Sans";
-  font-size: 2.8vw;
-}
-
-.installation-instruction {
-  display: flex;
-  flex-direction: column;
-  color: white;
-  font-family: "DM Sans";
-  align-items: center;
-}
-
-.instruction-screens {
-  width: 60vw;
-  margin-top: 20px;
-}
-
-.installation-instruction-1 {
-  color: white;
-  font-family: "DM Sans";
-}
+/*HERE*/
