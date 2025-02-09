@@ -6,7 +6,7 @@ const repoUrl =
 async function fetchReleases() {
   try {
     // Fetch release data from GitHub API
-    const response = await fetch(repoUrl);
+    const response = await fetch("/.netlify/functions/github");
     const releases = await response.json();
 
     if (releases.length === 0) {
