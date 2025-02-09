@@ -1,6 +1,5 @@
 // The URL of your GitHub repository's releases API
-const repoUrl =
-  "https://api.github.com/repos/E-m-i-n-e-n-c-e/events_manager/releases";
+const repoUrl = "https://api.github.com/repos/KingRain/Washio/releases";
 
 // Function to fetch all releases and update the page
 async function fetchReleases() {
@@ -69,7 +68,7 @@ fetchReleases();
 async function fetchLatestRelease() {
   try {
     const response = await fetch(
-      "https://api.github.com/repos/E-m-i-n-e-n-c-e/events_manager/releases/latest"
+      "https://api.github.com/repos/KingRain/Washio/releases/latest"
     );
     const data = await response.json();
 
