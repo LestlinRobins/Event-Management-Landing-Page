@@ -57,7 +57,8 @@ html {
   display: flex;
   align-items: center;
   gap: 1vh;
-  margin-left: -3vw;
+  margin-left: 0;
+  padding-left: 1vw;
 }
 
 .download-section {
