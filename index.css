@@ -25,7 +25,7 @@ html {
 }
 
 .header {
-  background-color: #13485f43;
+  background: linear-gradient(to bottom, rgba(7, 24, 31, 0.3), rgba(0, 0, 0, 0.3));
   padding: 3vh;
   display: flex;
   flex-direction: row;
@@ -50,14 +50,15 @@ html {
 }
 
 .header-logo {
-  height: 4.5vh;
+  height: 5vh;
 }
 
 .logo-section {
   display: flex;
   align-items: center;
   gap: 1vh;
-  margin-left: -3vw;
+  margin-left: 0;
+  padding-left: 1vw;
 }
 
 .download-section {
