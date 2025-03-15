@@ -155,18 +155,19 @@ async function fetchAndCreateContributors() {
 
     let contributors = await response.json();
 
-    // Remove Anita and Lestlin if they exist in the contributors list
     contributors = contributors.filter(
-      (c) => c.login !== "Anita George" && c.login !== "Lestlin Robins"
+      (c) => c.login !== "AnitaGeorge1806" && c.login !== "LestlinRobins"
     );
 
     // Shuffle the remaining contributors
     contributors = shuffleArray(contributors);
 
-    // Add Anita and Lestlin together at a random position
     const specialContributors = [
-      { login: "Anita George", html_url: "#" },
-      { login: "Lestlin Robins", html_url: "#" },
+      {
+        login: "AnitaGeorge1806",
+        html_url: "https://github.com/AnitaGeorge1806",
+      },
+      { login: "LestlinRobins", html_url: "https://github.com/LestlinRobins" },
     ];
 
     // Decide which row to place Anita and Lestlin (0, 1, or 2)
@@ -190,8 +191,11 @@ async function fetchAndCreateContributors() {
     ];
 
     const specialContributors = [
-      { login: "Anita George", html_url: "#" },
-      { login: "Lestlin Robins", html_url: "#" },
+      {
+        login: "AnitaGeorge1806",
+        html_url: "https://github.com/AnitaGeorge1806",
+      },
+      { login: "LestlinRobins", html_url: "https://github.com/LestlinRobins" },
     ];
 
     createScrollingRows(fallbackContributors, specialContributors, 1);
@@ -236,7 +240,6 @@ function createScrollingRows(contributors, specialContributors, specialRow) {
       Math.min(startIndex + contributorsPerRow, regularContributorsCount)
     );
 
-    // If this is the special row, add Anita and Lestlin together
     if (rowIndex === specialRow) {
       // Add special contributors at a random position within this row
       const insertPosition = Math.min(
