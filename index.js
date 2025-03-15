@@ -139,3 +139,146 @@ async function fetchLatestRelease() {
 // fetchContributors();
 // Call the function to fetch the latest release for the button
 fetchLatestRelease();
+// Function to fetch contributors and create scrolling rows
+async function fetchAndCreateContributors() {
+  try {
+    // Fetch contributors from GitHub API
+    const response = await fetch(
+      "https://api.github.com/repos/E-m-i-n-e-n-c-e/Revent/contributors"
+    );
+    let contributors = await response.json();
+
+    contributors = contributors.filter(
+      (c) => c.login !== "AnitaGeorge1806" && c.login !== "LestlinRobins"
+    );
+
+    // Shuffle the remaining contributors
+    contributors = shuffleArray(contributors);
+
+    const specialContributors = [
+      {
+        login: "AnitaGeorge1806",
+        html_url: "https://github.com/AnitaGeorge1806",
+      },
+      { login: "LestlinRobins", html_url: "https://github.com/LestlinRobins" },
+    ];
+
+    const targetRow = Math.floor(Math.random() * 3);
+
+    // Create rows with contributors
+    createScrollingRows(contributors, specialContributors, targetRow);
+  } catch (error) {
+    console.error("Error fetching contributors:", error);
+    // Fallback with sample data in case the API fails
+    const fallbackContributors = [
+      { login: "Contributor1", html_url: "#" },
+      { login: "Contributor2", html_url: "#" },
+      { login: "Contributor3", html_url: "#" },
+      { login: "Contributor4", html_url: "#" },
+      { login: "Contributor5", html_url: "#" },
+    ];
+
+    const specialContributors = [
+      {
+        login: "AnitaGeorge1806",
+        html_url: "https://github.com/AnitaGeorge1806",
+      },
+      { login: "LestlinRobins", html_url: "https://github.com/LestlinRobins" },
+    ];
+
+    createScrollingRows(fallbackContributors, specialContributors, 1);
+  }
+}
+
+// Function to shuffle an array (Fisher-Yates algorithm)
+function shuffleArray(array) {
+  const newArray = [...array]; // Create a copy of the array
+  for (let i = newArray.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
+  }
+  return newArray;
+}
+
+// Function to create scrolling rows with contributors
+function createScrollingRows(contributors, specialContributors, specialRow) {
+  const rows = [
+    document.getElementById("row1"),
+    document.getElementById("row2"),
+    document.getElementById("row3"),
+  ];
+
+  // Calculate how many contributors to put in each row
+  const regularContributorsCount = contributors.length;
+  const contributorsPerRow = Math.ceil(regularContributorsCount / 3);
+
+  // Distribute contributors across rows
+  for (let rowIndex = 0; rowIndex < rows.length; rowIndex++) {
+    // Create wrapper for continuous scrolling effect
+    const contentWrapper = document.createElement("div");
+    contentWrapper.className = "scroll-row-content";
+    rows[rowIndex].appendChild(contentWrapper);
+
+    // Get starting index for this row's contributors
+    const startIndex = rowIndex * contributorsPerRow;
+
+    // Get contributors for this row
+    let rowContributors = contributors.slice(
+      startIndex,
+      Math.min(startIndex + contributorsPerRow, regularContributorsCount)
+    );
+
+    if (rowIndex === specialRow) {
+      // Add special contributors at a random position within this row
+      const insertPosition = Math.min(
+        Math.floor(Math.random() * (rowContributors.length + 1)),
+        rowContributors.length
+      );
+
+      rowContributors = [
+        ...rowContributors.slice(0, insertPosition),
+        ...specialContributors,
+        ...rowContributors.slice(insertPosition),
+      ];
+    }
+
+    // We need enough contributors for the scrolling effect
+    // If there aren't enough, duplicate the ones we have
+    if (rowContributors.length < 6) {
+      // Duplicate contributors until we have at least 6
+      const originalLength = rowContributors.length;
+      for (let i = 0; i < Math.ceil(6 / originalLength) - 1; i++) {
+        rowContributors = [
+          ...rowContributors,
+          ...rowContributors.slice(0, originalLength),
+        ];
+      }
+    }
+
+    // Create initial set of contributors
+    rowContributors.forEach((contributor) => {
+      appendContributor(contentWrapper, contributor);
+    });
+
+    // Clone the content for seamless scrolling
+    const contentClone = contentWrapper.cloneNode(true);
+    rows[rowIndex].appendChild(contentClone);
+  }
+}
+
+// Function to create a contributor element
+function appendContributor(parent, contributor) {
+  const contributorDiv = document.createElement("div");
+  contributorDiv.className = "contributor";
+
+  const link = document.createElement("a");
+  link.href = contributor.html_url || "#";
+  link.textContent = contributor.login;
+  link.target = "_blank";
+
+  contributorDiv.appendChild(link);
+  parent.appendChild(contributorDiv);
+}
+
+// Call the function when the DOM is fully loaded
+document.addEventListener("DOMContentLoaded", fetchAndCreateContributors);
