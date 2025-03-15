@@ -6,7 +6,7 @@ const repoUrl =
 async function fetchReleases() {
   try {
     // Fetch release data from GitHub API
-    const response = await fetch("/.netlify/functions/github");
+    const response = await fetch("/netlify/functions/github");
     const releases = await response.json();
 
     if (releases.length === 0) {
@@ -144,7 +144,10 @@ fetchLatestRelease();
 async function fetchAndCreateContributors() {
   try {
     // Use the Netlify function with a path parameter for contributors
-    const response = await fetch("/.netlify/functions/github/contributors");
+    // const response = await fetch("/netlify/functions/github/contributors");
+    const response = await fetch(
+      "https://api.github.com/repos/E-m-i-n-e-n-c-e/Revent/contributors"
+    );
 
     if (!response.ok) {
       throw new Error(`Failed to fetch contributors: ${response.status}`);
