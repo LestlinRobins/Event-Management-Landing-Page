@@ -140,29 +140,33 @@ async function fetchLatestRelease() {
 // Call the function to fetch the latest release for the button
 fetchLatestRelease();
 // Function to fetch contributors and create scrolling rows
+// Function to fetch contributors and create scrolling rows
 async function fetchAndCreateContributors() {
   try {
-    // Fetch contributors from GitHub API
-    const response = await fetch(
-      "https://api.github.com/repos/E-m-i-n-e-n-c-e/Revent/contributors"
-    );
+    // Use the Netlify function with a path parameter for contributors
+    const response = await fetch("/.netlify/functions/github/contributors");
+
+    if (!response.ok) {
+      throw new Error(`Failed to fetch contributors: ${response.status}`);
+    }
+
     let contributors = await response.json();
 
+    // Remove Anita and Lestlin if they exist in the contributors list
     contributors = contributors.filter(
-      (c) => c.login !== "AnitaGeorge1806" && c.login !== "LestlinRobins"
+      (c) => c.login !== "Anita George" && c.login !== "Lestlin Robins"
     );
 
     // Shuffle the remaining contributors
     contributors = shuffleArray(contributors);
 
+    // Add Anita and Lestlin together at a random position
     const specialContributors = [
-      {
-        login: "AnitaGeorge1806",
-        html_url: "https://github.com/AnitaGeorge1806",
-      },
-      { login: "LestlinRobins", html_url: "https://github.com/LestlinRobins" },
+      { login: "Anita George", html_url: "#" },
+      { login: "Lestlin Robins", html_url: "#" },
     ];
 
+    // Decide which row to place Anita and Lestlin (0, 1, or 2)
     const targetRow = Math.floor(Math.random() * 3);
 
     // Create rows with contributors
@@ -171,19 +175,20 @@ async function fetchAndCreateContributors() {
     console.error("Error fetching contributors:", error);
     // Fallback with sample data in case the API fails
     const fallbackContributors = [
-      { login: "Contributor1", html_url: "#" },
-      { login: "Contributor2", html_url: "#" },
-      { login: "Contributor3", html_url: "#" },
-      { login: "Contributor4", html_url: "#" },
-      { login: "Contributor5", html_url: "#" },
+      { login: "Contributor1", html_url: "https://github.com/E-m-i-n-e-n-c-e" },
+      { login: "Contributor2", html_url: "https://github.com/E-m-i-n-e-n-c-e" },
+      { login: "Contributor3", html_url: "https://github.com/E-m-i-n-e-n-c-e" },
+      { login: "Contributor4", html_url: "https://github.com/E-m-i-n-e-n-c-e" },
+      { login: "Contributor5", html_url: "https://github.com/E-m-i-n-e-n-c-e" },
+      { login: "Contributor6", html_url: "https://github.com/E-m-i-n-e-n-c-e" },
+      { login: "Contributor7", html_url: "https://github.com/E-m-i-n-e-n-c-e" },
+      { login: "Contributor8", html_url: "https://github.com/E-m-i-n-e-n-c-e" },
+      { login: "Contributor9", html_url: "https://github.com/E-m-i-n-e-n-c-e" },
     ];
 
     const specialContributors = [
-      {
-        login: "AnitaGeorge1806",
-        html_url: "https://github.com/AnitaGeorge1806",
-      },
-      { login: "LestlinRobins", html_url: "https://github.com/LestlinRobins" },
+      { login: "Anita George", html_url: "#" },
+      { login: "Lestlin Robins", html_url: "#" },
     ];
 
     createScrollingRows(fallbackContributors, specialContributors, 1);
@@ -228,6 +233,7 @@ function createScrollingRows(contributors, specialContributors, specialRow) {
       Math.min(startIndex + contributorsPerRow, regularContributorsCount)
     );
 
+    // If this is the special row, add Anita and Lestlin together
     if (rowIndex === specialRow) {
       // Add special contributors at a random position within this row
       const insertPosition = Math.min(
