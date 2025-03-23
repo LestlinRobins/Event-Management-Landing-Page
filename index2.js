@@ -1,10 +1,10 @@
 const downloadUrl =
-  "https://github.com/E-m-i-n-e-n-c-e/Revent/releases/download/beta1/REvent.v0.4.0-beta.apk";
+  "https://github.com/E-m-i-n-e-n-c-e/Revent/releases/download/beta2/REvent.v0.4.1-beta.apk";
 const downloadButton = document.getElementById("downloadButton");
 downloadButton.textContent = "Download";
 downloadButton.disabled = false;
 const versionText = document.getElementById("versionText");
-const data = { name: "Revent", version: " v0.4.0 (beta)" }; // Define the data variable
+const data = { name: "Revent", version: " v0.4.1 (beta)" }; // Define the data variable
 versionText.textContent = data.name + data.version;
 const appleButton = document.getElementsByClassName("apple-version-text")[0];
 appleButton.textContent = data.name + data.version;
